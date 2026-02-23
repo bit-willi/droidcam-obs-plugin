@@ -27,8 +27,11 @@ UNAME := $(shell uname -s)
 ifeq ($(UNAME),Linux)
 include linux/linux.mk
 
+LDD_LIBS += -lusbmuxd-2.0 -limobiledevice-1.0 -limobiledevice-glue-1.0
+LDD_LIBS += -lturbojpeg -lobs
+
 run: debug
-	obs
+    obs
 endif
 
 
